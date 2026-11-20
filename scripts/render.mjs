@@ -100,105 +100,83 @@ function textLines(lines, x, y0, lh, size, bold, fill, anchor = 'start', family 
     .join('\n');
 }
 
-// ---------------------------------------------------------------- the 16 stories
+// ---------------------------------------------------------------- the 8 stories
 const HERO = [
   {
     num: 1,
-    tag: 'SOUTH ASIA • DISASTER',
-    headline: 'Cyclone Akvan Slams Odisha; 100K-300K Evacuated',
-    body: "Severe Cyclone Akvan made landfall along India's Odisha coast on Friday, Nov 20. Authorities evacuated 100,000 to 300,000 residents from low-lying coastal districts.",
+    tag: 'INDIA • CYCLONE',
+    headline: 'Akvan Comes Ashore in Odisha',
+    body: 'Severe Cyclonic Storm Akvan comes ashore near Gopalpur on Friday, with winds of 90-100 km/h gusting to 110. Odisha has moved 105,304 people into 1,224 shelters, and schools are shut in 11 districts.',
   },
   {
     num: 2,
-    tag: 'GLOBAL MARKETS • FINANCE',
-    headline: 'Equities Plunge Worldwide: Dow -1,084, Nikkei -4.68%',
-    body: 'Major stock indices tumbled sharply on Friday: the Dow Jones fell 1,084 points, the S&P 500 dropped 2.02%, and Tokyo\'s Nikkei 225 slid 4.68% in heavy selling.',
+    tag: 'MARKETS',
+    headline: 'Asian Markets Slide on Friday',
+    body: 'The Nikkei 225 falls 4.6 percent in Friday morning trade in Tokyo and the Kospi drops 4.8 percent in Seoul. The slide follows Thursday on Wall Street: the Dow lost 1,101 points to 49,097, closing below 50,000 for the first time since June.',
   },
   {
     num: 3,
-    tag: 'MIDDLE EAST • SECURITY',
-    headline: 'Houthi Missile Hits Riyadh; ADNOC Ship Hit in Hormuz',
-    body: "A Houthi missile struck Riyadh's KAFD financial district on Nov 20, while an ADNOC-operated vessel came under attack transiting the Strait of Hormuz.",
+    tag: 'UKRAINE',
+    headline: 'Kyiv Struck by Missiles Overnight',
+    body: 'Russia strikes Kyiv with ballistic missiles overnight into Friday. Missile debris sets fire to a three-storey building in the Obolonskyi district, and explosions sound across the capital. A projectile lands near the Dutch embassy, causing minor damage.',
   },
   {
     num: 4,
-    tag: 'EUROPE & WASHINGTON',
-    headline: 'Kyiv & Crimea Bridge Hit; Trump Delays Iran to 2027',
-    body: 'Missiles hit Kyiv and struck the Crimea Bridge a 3rd time this week as Europe signals readiness for Russia talks. Trump delayed Iran action to 2027 after a 51-48 Senate vote.',
+    tag: 'ITALY • LABOUR',
+    headline: 'Italy Stops for a Day',
+    body: "Italy's largest union, the CGIL, calls a 24-hour general strike on Friday against the government's 2027 budget, with around 100 demonstrations planned. Buses, trams and metros are disrupted; trains and flights are not part of this strike.",
   },
 ];
 
 const BRIEFS = [
   {
     num: 5,
-    tag: 'NORTH KOREA',
-    title: 'Yongbyon Uranium Enrichment Expanded',
-    detail: 'North Korea expands uranium enrichment capacity at its Yongbyon nuclear complex.',
+    tag: 'CLIMATE / COP31',
+    title: 'COP31 Closes in Antalya',
+    detail: 'The UN climate conference reaches its last day on Friday in Antalya, Turkiye, after running since 9 November. Negotiators are in their final hours as the summit closes.',
   },
   {
     num: 6,
-    tag: 'CHINA • TRADE',
-    title: 'APEC Summit Convenes in Shenzhen',
-    detail: 'Asia-Pacific leaders gather in Shenzhen as the APEC summit opens on Friday.',
+    tag: 'WASHINGTON',
+    title: 'Trump to Brief Press at Noon',
+    detail: 'President Trump will hold a White House news conference at noon Eastern on Friday, after returning from his Asia trip, to discuss trade deals with Thailand, the Philippines and other countries.',
   },
   {
     num: 7,
-    tag: 'TURKEY • CLIMATE',
-    title: 'COP31 Climate Summit Closes in Antalya',
-    detail: 'The UN COP31 climate conference concludes negotiations in Antalya, Turkey.',
+    tag: 'ENERGY',
+    title: 'Oil Edges Up on Friday',
+    detail: "Brent crude rises to 92.22 dollars a barrel and US crude to 83.40 dollars on Friday, as Thursday's Houthi attacks on Riyadh and tanker disruptions in the Strait of Hormuz stir supply concerns.",
   },
   {
     num: 8,
-    tag: 'SOUTH KOREA',
-    title: 'Court Overturns Conviction of Ex-PM Han',
-    detail: 'South Korean court overturns the prior conviction of former Prime Minister Han.',
-  },
-  {
-    num: 9,
-    tag: 'FIJI • PACIFIC',
-    title: 'State of Emergency Declared Over Drought',
-    detail: 'Fiji declares a national state of emergency in response to severe drought conditions.',
-  },
-  {
-    num: 10,
-    tag: 'US & VENEZUELA',
-    title: 'Military Cooperation Formally Restored',
-    detail: 'The United States and Venezuela restore bilateral military cooperation on Nov 20.',
+    tag: 'TAIWAN / MARKETS',
+    title: 'Taiwan Tightens Short-Selling Curbs',
+    detail: "Taiwan's markets regulator tightens short-selling rules effective Friday, after the Taiex fell 4.4 percent on Thursday and lost more than 5,000 points in three days. Stocks down 3.5 percent or more cannot be shorted below the prior close.",
   },
 ];
 
-const CARDS = [
-  {
-    num: 11,
-    tag: 'AI & TECHNOLOGY',
-    title: 'Google Releases Gemini 4 Neon',
-    body: 'Google officially launches Gemini 4 Neon worldwide on Friday, Nov 20.',
-  },
-  {
-    num: 12,
-    tag: 'DEEP SPACE',
-    title: 'Voyager 1 Hits One Light-Day',
-    body: "NASA's Voyager 1 probe reaches a distance of one full light-day from Earth.",
-  },
-  {
-    num: 13,
-    tag: 'CRICKET • NZ VS IND',
-    title: 'Henry Nicholls Scores 113*',
-    body: 'Henry Nicholls hits an unbeaten 113* for New Zealand against India.',
-  },
-  {
-    num: 14,
-    tag: 'WASHINGTON',
-    title: 'Trump Pardons Pete Rose',
-    body: "President Trump issues a presidential pardon for baseball's Pete Rose.",
-  },
+const NUMBERS = [
+  { value: '105,304', label: 'PEOPLE EVACUATED IN ODISHA', hot: false },
+  { value: '1,224', label: 'SHELTERS OPENED IN ODISHA', hot: false },
+  { value: '-4.6%', label: 'NIKKEI 225, FRIDAY MORNING', hot: true },
+  { value: '-4.8%', label: 'KOSPI, FRIDAY MORNING', hot: true },
+  { value: '-1,101', label: 'DOW POINTS, THURSDAY CLOSE', hot: true },
+  { value: '$92.22', label: 'BRENT CRUDE PER BARREL, FRIDAY', hot: false },
+  { value: '100', label: 'DEMONSTRATIONS PLANNED IN ITALY', hot: false },
+  { value: '90-100 KM/H', label: 'AKVAN WINDS AT LANDFALL', hot: false },
 ];
 
-const EXCLUDED = [
-  'ICJ Myanmar Rohingya Genocide Ruling',
-  'Anthropic $81.3 Billion Initial Public Offering',
-  'Trump-Xi-Putin Trilateral Summit & Peace Declaration',
-  'US-Denmark Bilateral Greenland Pact',
+const DATECHECK = [
+  { label: 'ICJ rules Myanmar committed genocide against the Rohingya', date: '19 NOV' },
+  { label: 'Anthropic lists on Nasdaq in its IPO', date: '19 NOV' },
+  { label: 'Trump, Xi and Putin summit in Shenzhen; joint peace declaration', date: '19 NOV' },
+  { label: 'Greenland security pact', date: '19 NOV' },
+  { label: 'Trump pardons Pete Rose', date: '19 NOV' },
+  { label: 'Google releases Gemini 4 Neon', date: '18 NOV' },
+  { label: "US Senate votes 51-48 against limiting Trump's Iran war powers", date: '19 NOV' },
+  { label: 'Crimea Bridge attacked for a third time', date: '18-19 NOV' },
+  { label: 'Houthi missiles hit Riyadh; ADNOC ship hit in Strait of Hormuz', date: '18-19 NOV' },
+  { label: 'APEC leaders adopt their declaration in Shenzhen', date: '19 NOV' },
 ];
 
 // ------------------------------------------------------- hero illustrations
@@ -210,9 +188,9 @@ function illoCyclone() {
     <polygon points="0,110 0,80 38,70 72,82 112,74 152,84 192,72 229,80 229,110" fill="${C.mapLand}" stroke="${C.mapStroke}" stroke-width="0.75"/>
     <rect x="8" y="8" width="118" height="26" fill="#FFFFFF" stroke="${C.ruleLight}" stroke-width="1"/>
     <text x="14" y="20" font-family="Liberation Sans" font-size="10" font-weight="bold" fill="${C.ink}">CYCLONE AKVAN</text>
-    <text x="14" y="30" font-family="Liberation Sans" font-size="8" fill="${C.inkMuted}">LANDFALL NOV 20</text>
+    <text x="14" y="30" font-family="Liberation Sans" font-size="8" fill="${C.inkMuted}">LANDFALL FRI 20 NOV</text>
     <rect x="148" y="8" width="73" height="30" fill="${C.crimson}"/>
-    <text x="184.5" y="21" font-family="Liberation Sans" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">100K - 300K</text>
+    <text x="184.5" y="21" font-family="Liberation Sans" font-size="11" font-weight="bold" fill="#FFFFFF" text-anchor="middle">105,304</text>
     <text x="184.5" y="32" font-family="Liberation Sans" font-size="8" fill="#FFFFFF" text-anchor="middle">EVACUATED</text>
     <circle cx="92" cy="62" r="24" fill="none" stroke="${C.inkMuted}" stroke-width="1.5" stroke-dasharray="5 4"/>
     <path d="M74,62 a18,18 0 1,1 18,18" fill="none" stroke="${C.ink}" stroke-width="2"/>
@@ -220,14 +198,16 @@ function illoCyclone() {
     <path d="M92,38 C100,48 104,54 104,62" fill="none" stroke="${C.ink}" stroke-width="2"/>
     <circle cx="92" cy="62" r="4" fill="${C.crimson}"/>
     <path d="M140,52 l6,8 M152,46 l6,8 M128,44 l6,8" stroke="${C.navy}" stroke-width="1.5"/>
+    <rect x="8" y="92" width="116" height="15" fill="#FFFFFF" stroke="${C.ruleLight}" stroke-width="1"/>
+    <text x="14" y="103" font-family="Liberation Sans" font-size="8" font-weight="bold" fill="${C.ink}">WINDS 90-100 KM/H</text>
   </g>`;
 }
 
 function illoMarkets() {
   const cards = [
-    ['DOW JONES', '-1,084 PTS'],
-    ['S&P 500', '-2.02%'],
-    ['NIKKEI 225', '-4.68%'],
+    ['NIKKEI • FRI AM', '-4.6%'],
+    ['KOSPI • FRI AM', '-4.8%'],
+    ['DOW • THU', '-1,101 PTS'],
   ];
   const cardSvg = cards
     .map(([label, value], i) => {
@@ -250,50 +230,82 @@ function illoMarkets() {
   </g>`;
 }
 
-function illoMiddleEast() {
+function illoKyiv() {
   return `<g>
-    <rect x="0" y="0" width="229" height="110" fill="${C.navyBg}"/>
-    <polygon points="30,20 120,8 180,18 200,45 185,75 150,100 100,108 55,95 25,60 20,35" fill="${C.mapLand}" stroke="${C.mapStroke}" stroke-width="0.75"/>
-    <polygon points="168,20 198,26 190,46 174,40" fill="${C.navyBg}"/>
-    <line x1="95" y1="55" x2="52" y2="26" stroke="${C.inkMuted}" stroke-width="1"/>
-    <line x1="178" y1="32" x2="196" y2="86" stroke="${C.inkMuted}" stroke-width="1"/>
-    <circle cx="95" cy="55" r="10" fill="none" stroke="${C.crimson}" stroke-width="1.5"/>
-    <circle cx="95" cy="55" r="6" fill="${C.crimson}"/>
-    <circle cx="95" cy="55" r="2" fill="#FFFFFF"/>
-    <circle cx="178" cy="32" r="10" fill="none" stroke="${C.crimson}" stroke-width="1.5"/>
-    <circle cx="178" cy="32" r="6" fill="${C.crimson}"/>
-    <circle cx="178" cy="32" r="2" fill="#FFFFFF"/>
-    <text x="8" y="14" font-family="Liberation Sans" font-size="9" font-weight="bold" fill="${C.ink}">KAFD RIYADH</text>
-    <text x="8" y="25" font-family="Liberation Sans" font-size="8" fill="${C.inkMuted}">MISSILE IMPACT</text>
-    <text x="150" y="98" font-family="Liberation Sans" font-size="9" font-weight="bold" fill="${C.ink}">HORMUZ STRAIT</text>
-    <text x="150" y="108" font-family="Liberation Sans" font-size="8" fill="${C.inkMuted}">ADNOC SHIP HIT</text>
+    <rect x="0" y="0" width="229" height="110" fill="#1B2A4A"/>
+    <circle cx="150" cy="10" r="1.2" fill="#FFFFFF"/>
+    <circle cx="185" cy="8" r="1" fill="#FFFFFF"/>
+    <circle cx="210" cy="18" r="1.2" fill="#FFFFFF"/>
+    <circle cx="136" cy="42" r="1" fill="#FFFFFF"/>
+    <circle cx="60" cy="44" r="1" fill="#FFFFFF"/>
+    <circle cx="30" cy="50" r="1.2" fill="#FFFFFF"/>
+    <line x1="196" y1="6" x2="128" y2="52" stroke="#F59E0B" stroke-width="2"/>
+    <circle cx="128" cy="52" r="3" fill="#FDE68A"/>
+    <line x1="214" y1="22" x2="172" y2="44" stroke="#F59E0B" stroke-width="1.5"/>
+    <circle cx="172" cy="44" r="2.5" fill="#FDE68A"/>
+    <circle cx="107" cy="40" r="12" fill="#F59E0B" opacity="0.35"/>
+    <circle cx="107" cy="44" r="7" fill="#F97316"/>
+    <path d="M101,46 C103,38 105,34 107,30 C109,34 111,38 113,46 Z" fill="#FDE68A"/>
+    <g fill="#0F172A">
+      <rect x="0" y="70" width="30" height="40"/>
+      <rect x="34" y="55" width="26" height="55"/>
+      <rect x="64" y="75" width="30" height="35"/>
+      <rect x="98" y="48" width="22" height="62"/>
+      <rect x="124" y="65" width="26" height="45"/>
+      <rect x="154" y="50" width="26" height="60"/>
+      <rect x="184" y="68" width="24" height="42"/>
+      <rect x="212" y="60" width="17" height="50"/>
+    </g>
+    <g fill="#FDE68A">
+      <rect x="6" y="78" width="3" height="4"/><rect x="14" y="86" width="3" height="4"/><rect x="22" y="76" width="3" height="4"/>
+      <rect x="40" y="62" width="3" height="4"/><rect x="48" y="72" width="3" height="4"/><rect x="42" y="86" width="3" height="4"/>
+      <rect x="70" y="82" width="3" height="4"/><rect x="82" y="90" width="3" height="4"/>
+      <rect x="104" y="58" width="3" height="4"/><rect x="112" y="70" width="3" height="4"/>
+      <rect x="130" y="74" width="3" height="4"/><rect x="140" y="84" width="3" height="4"/>
+      <rect x="160" y="58" width="3" height="4"/><rect x="168" y="70" width="3" height="4"/><rect x="172" y="88" width="3" height="4"/>
+      <rect x="190" y="76" width="3" height="4"/><rect x="198" y="88" width="3" height="4"/>
+      <rect x="216" y="68" width="3" height="4"/>
+    </g>
+    <rect x="8" y="8" width="140" height="26" fill="#FFFFFF" stroke="${C.ruleLight}" stroke-width="1"/>
+    <text x="14" y="20" font-family="Liberation Sans" font-size="10" font-weight="bold" fill="${C.ink}">KYIV</text>
+    <text x="14" y="30" font-family="Liberation Sans" font-size="8" fill="${C.inkMuted}">OVERNIGHT INTO FRI 20 NOV</text>
   </g>`;
 }
 
-function illoUkraine() {
-  const leftLines = ['CRIMEA BRIDGE', 'HIT 3RD TIME', 'KYIV STRUCK', 'EU OPEN TO TALKS'];
-  const leftSvg = leftLines
-    .map((ln, i) => {
-      const y = 38 + i * 15;
-      return `<rect x="8" y="${y - 8}" width="4" height="4" fill="${C.crimson}"/><text x="17" y="${y}" font-family="Liberation Sans" font-size="10.5" font-weight="bold" fill="${C.ink}">${ln}</text>`;
-    })
-    .join('\n');
+function illoItaly() {
   return `<g>
-    <rect x="0" y="0" width="128" height="110" fill="${C.paperCard}"/>
-    <rect x="128" y="0" width="101" height="110" fill="${C.navy}"/>
-    <text x="8" y="20" font-family="Liberation Sans" font-size="9" font-weight="bold" fill="${C.crimson}">UKRAINE FRONT</text>
-    <line x1="8" y1="26" x2="120" y2="26" stroke="${C.crimson}" stroke-width="1.5"/>
-    ${leftSvg}
-    <text x="136" y="20" font-family="Liberation Sans" font-size="9" font-weight="bold" fill="#FFFFFF">WASHINGTON</text>
-    <line x1="136" y1="26" x2="221" y2="26" stroke="#FFFFFF" stroke-width="1" opacity="0.5"/>
-    <text x="136" y="42" font-family="Liberation Sans" font-size="10.5" font-weight="bold" fill="#FFFFFF">IRAN DECISION</text>
-    <text x="136" y="57" font-family="Liberation Sans" font-size="10.5" font-weight="bold" fill="#FFFFFF">DELAYED TO 2027</text>
-    <text x="136" y="76" font-family="Liberation Sans" font-size="10.5" font-weight="bold" fill="#FFFFFF">SENATE: 51 - 48</text>
-    <line x1="136" y1="88" x2="221" y2="88" stroke="#FFFFFF" stroke-width="1" opacity="0.5"/>
+    <rect x="0" y="0" width="229" height="110" fill="${C.paperCard}"/>
+    <rect x="10" y="8" width="112" height="30" fill="#FFFFFF" stroke="${C.crimson}" stroke-width="1.5"/>
+    <text x="66" y="21" font-family="Liberation Sans" font-size="10" font-weight="bold" fill="${C.crimson}" text-anchor="middle">24-HOUR STRIKE</text>
+    <text x="66" y="33" font-family="Liberation Sans" font-size="8" fill="${C.inkMuted}" text-anchor="middle">FRI 20 NOV</text>
+    <line x1="66" y1="38" x2="66" y2="72" stroke="${C.ink}" stroke-width="1.5"/>
+    <rect x="124" y="14" width="100" height="24" fill="${C.navy}"/>
+    <text x="174" y="30" font-family="Liberation Sans" font-size="7.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">100 DEMONSTRATIONS</text>
+    <line x1="174" y1="38" x2="174" y2="72" stroke="${C.ink}" stroke-width="1.5"/>
+    <g>
+      <circle cx="20" cy="80" r="7" fill="${C.ink}"/>
+      <circle cx="45" cy="80" r="7" fill="${C.navy}"/>
+      <circle cx="70" cy="80" r="7" fill="${C.crimson}"/>
+      <circle cx="95" cy="80" r="7" fill="${C.ink}"/>
+      <circle cx="120" cy="80" r="7" fill="${C.navy}"/>
+      <circle cx="145" cy="80" r="7" fill="${C.crimson}"/>
+      <circle cx="170" cy="80" r="7" fill="${C.ink}"/>
+      <circle cx="195" cy="80" r="7" fill="${C.navy}"/>
+      <circle cx="218" cy="80" r="7" fill="${C.crimson}"/>
+      <rect x="11" y="87" width="18" height="23" fill="${C.ink}"/>
+      <rect x="36" y="87" width="18" height="23" fill="${C.navy}"/>
+      <rect x="61" y="87" width="18" height="23" fill="${C.crimson}"/>
+      <rect x="86" y="87" width="18" height="23" fill="${C.ink}"/>
+      <rect x="111" y="87" width="18" height="23" fill="${C.navy}"/>
+      <rect x="136" y="87" width="18" height="23" fill="${C.crimson}"/>
+      <rect x="161" y="87" width="18" height="23" fill="${C.ink}"/>
+      <rect x="186" y="87" width="18" height="23" fill="${C.navy}"/>
+      <rect x="209" y="87" width="18" height="23" fill="${C.crimson}"/>
+    </g>
   </g>`;
 }
 
-const ILLOS = [illoCyclone, illoMarkets, illoMiddleEast, illoUkraine];
+const ILLOS = [illoCyclone, illoMarkets, illoKyiv, illoItaly];
 
 // ---------------------------------------------------------------- world map
 // Simplified continent polygons in lon/lat, projected equirectangular.
@@ -314,22 +326,17 @@ const projX = (lon) => MAP.x + ((lon + 170) / 360) * MAP.w;
 const projY = (lat) => MAP.y + ((75 - lat) / 130) * MAP.h;
 
 // Pins: [number, lon, lat, leaderToLon, leaderToLat] - the last two are set
-// only where two pins would overlap (NYC vs Washington, Yongbyon vs Seoul).
+// only where two pins would overlap. Story 2 (markets) has two pins.
 const PINS = [
-  [1, 86, 20, null, null],
-  [2, -55, 42, -74, 40],
-  [3, 50, 25, null, null],
-  [4, 32, 46, null, null],
-  [5, 126, 39.8, null, null],
-  [6, 114, 22.5, null, null],
-  [7, 30.7, 36.9, null, null],
-  [8, 140, 33, 127, 37.5],
-  [9, 178, -18, null, null],
-  [10, -67, 10.5, null, null],
-  [11, -120, 37, null, null],
-  [12, -30, 70, null, null],
-  [13, 172, -41, null, null],
-  [14, -77, 39, null, null],
+  [1, 84.9, 19.3, null, null],
+  [2, 139.7, 35.7, null, null],
+  [2, 127, 37.5, null, null],
+  [3, 30.5, 50.5, null, null],
+  [4, 12.5, 41.9, null, null],
+  [5, 30.7, 36.9, null, null],
+  [6, -77, 38.9, null, null],
+  [7, 46.7, 24.6, null, null],
+  [8, 121.6, 25, null, null],
 ];
 
 function mapSvg() {
@@ -355,7 +362,7 @@ function mapSvg() {
   <line x1="20" y1="${equatorY}" x2="506" y2="${equatorY}" stroke="#8A8378" stroke-width="1" stroke-dasharray="4 3"/>
   <line x1="${meridianX}" y1="468" x2="${meridianX}" y2="710" stroke="#8A8378" stroke-width="1" stroke-dasharray="4 3"/>
   ${pins}
-  <text x="28" y="727" font-family="Liberation Sans" font-size="9" fill="${C.inkMuted}">PINS 1-14 MARK THE STORIES ABOVE - POSITIONS APPROXIMATE</text>`;
+  <text x="28" y="727" font-family="Liberation Sans" font-size="9" fill="${C.inkMuted}">PINS 1-8 MARK THE STORIES ABOVE - STORY 2 HAS TWO PINS - POSITIONS APPROXIMATE</text>`;
 }
 
 // ---------------------------------------------------------------- sections
@@ -364,7 +371,7 @@ function heroSvg() {
     const x = 20 + idx * 249;
     const y = 122;
     const headLines = wrapText(h.headline, 14.5, true, 229, 2);
-    const bodyLines = wrapText(h.body, 11, false, 229, 5);
+    const bodyLines = wrapText(h.body, 11, false, 229, 6);
     return `<g>
     <rect x="${x}" y="${y}" width="237" height="22" fill="${C.paperAlt}"/>
     <line x1="${x}" y1="${y + 22}" x2="${x + 237}" y2="${y + 22}" stroke="${C.ruleLight}" stroke-width="1"/>
@@ -384,61 +391,59 @@ function heroSvg() {
 
 function briefsSvg() {
   return BRIEFS.map((b, idx) => {
-    const y = 442 + idx * 49.5;
+    const y = 442 + idx * 75;
     const titleSize = fitFont(b.tag + '  ' + b.title, 12, true, 446, 10.5);
-    const detailSize = fitFont(b.detail, 10.8, false, 446, 9.5);
+    const detailLines = wrapText(b.detail, 10.8, false, 448, 3);
     const sep = idx < BRIEFS.length - 1
-      ? `<line x1="516" y1="${(y + 46).toFixed(1)}" x2="1004" y2="${(y + 46).toFixed(1)}" stroke="${C.ruleLight}" stroke-width="1"/>`
+      ? `<line x1="516" y1="${(y + 72).toFixed(1)}" x2="1004" y2="${(y + 72).toFixed(1)}" stroke="${C.ruleLight}" stroke-width="1"/>`
       : '';
     return `<g>
     <rect x="516" y="${y.toFixed(1)}" width="32" height="44" fill="${C.ink}"/>
     <text x="532" y="${(y + 28).toFixed(1)}" font-family="Liberation Sans" font-size="13" font-weight="bold" fill="#FFFFFF" text-anchor="middle">${b.num}</text>
     <text x="556" y="${(y + 17).toFixed(1)}" font-family="Liberation Sans" font-size="10.5" font-weight="bold" fill="${C.crimson}">${esc(b.tag)}</text>
     <text x="${556 + textW(b.tag, 10.5, true) + 8}" y="${(y + 17).toFixed(1)}" font-family="Liberation Sans" font-size="${titleSize}" font-weight="bold" fill="${C.ink}">${esc(b.title)}</text>
-    <text x="556" y="${(y + 35).toFixed(1)}" font-family="Liberation Sans" font-size="${detailSize}" fill="${C.ink}">${esc(b.detail)}</text>
+    ${textLines(detailLines, 556, y + 35, 16, 10.8, false, C.ink)}
     ${sep}
   </g>`;
   }).join('\n');
 }
 
-function cardsSvg() {
-  const bar = `<rect x="20" y="750" width="518" height="24" fill="${C.navy}"/>
-  <text x="279" y="766" font-family="Liberation Sans" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">SCIENCE, TECHNOLOGY &amp; INTERNATIONAL SPORT (NOV 20)</text>`;
-  const cards = CARDS.map((c, i) => {
+function numbersSvg() {
+  const head = `<rect x="20" y="750" width="486" height="24" fill="${C.navy}"/>
+  <text x="263" y="766" font-family="Liberation Sans" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">FRIDAY'S NUMBERS</text>`;
+  const grid = `<rect x="20" y="774" width="486" height="204" fill="none" stroke="${C.ruleLight}" stroke-width="1"/>
+  <line x1="263" y1="774" x2="263" y2="978" stroke="${C.ruleLight}" stroke-width="1"/>
+  <line x1="20" y1="825" x2="506" y2="825" stroke="${C.ruleLight}" stroke-width="1"/>
+  <line x1="20" y1="876" x2="506" y2="876" stroke="${C.ruleLight}" stroke-width="1"/>
+  <line x1="20" y1="927" x2="506" y2="927" stroke="${C.ruleLight}" stroke-width="1"/>`;
+  const cells = NUMBERS.map((n, i) => {
     const col = i % 2;
     const row = Math.floor(i / 2);
-    const x = 20 + col * 264;
-    const y = 782 + row * 106;
-    const titleSize = fitFont(c.title, 13, true, 234, 11);
-    const bodyLines = wrapText(c.body, 11, false, 234, 2);
-    return `<g>
-    <rect x="${x}" y="${y}" width="254" height="98" fill="${C.paperCard}" stroke="${C.ruleLight}" stroke-width="1"/>
-    <rect x="${x + 10}" y="${y + 10}" width="24" height="24" fill="${C.navy}"/>
-    <text x="${x + 22}" y="${y + 26.5}" font-family="Liberation Sans" font-size="12" font-weight="bold" fill="#FFFFFF" text-anchor="middle">${c.num}</text>
-    <text x="${x + 42}" y="${y + 26}" font-family="Liberation Sans" font-size="10.5" font-weight="bold" fill="${C.navy}">${esc(c.tag)}</text>
-    <text x="${x + 10}" y="${y + 52}" font-family="Liberation Sans" font-size="${titleSize}" font-weight="bold" fill="${C.ink}">${esc(c.title)}</text>
-    ${textLines(bodyLines, x + 10, y + 70, 14.5, 11, false, C.ink)}
-  </g>`;
+    const x = 20 + col * 243;
+    const y = 774 + row * 51;
+    const fill = n.hot ? C.crimson : C.ink;
+    return `<text x="${x + 12}" y="${y + 23}" font-family="Liberation Sans" font-size="17" font-weight="bold" fill="${fill}">${esc(n.value)}</text>
+    <text x="${x + 12}" y="${y + 41}" font-family="Liberation Sans" font-size="8.5" fill="${C.inkMuted}">${esc(n.label)}</text>`;
   }).join('\n');
-  return bar + '\n' + cards;
+  return head + '\n' + grid + '\n' + cells;
 }
 
 function dateCheckSvg() {
-  const items = EXCLUDED.map((label, i) => {
-    const y0 = 780 + i * 42.5;
+  const items = DATECHECK.map((d, i) => {
+    const y0 = 806 + i * 15.5;
     return `<g>
-    <rect x="562" y="${(y0 + 2).toFixed(1)}" width="52" height="16" fill="${C.crimson}"/>
-    <text x="588" y="${(y0 + 13.5).toFixed(1)}" font-family="Liberation Sans" font-size="8.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">NOV 19</text>
-    <text x="622" y="${(y0 + 14).toFixed(1)}" font-family="Liberation Sans" font-size="11.5" font-weight="bold" fill="${C.ink}">${esc(label)}</text>
-    <text x="562" y="${(y0 + 32).toFixed(1)}" font-family="Liberation Sans" font-size="10" fill="${C.inkMuted}">Occurred Thursday, Nov 19 - Excluded from Nov 20 edition</text>
+    <rect x="528" y="${y0.toFixed(1)}" width="56" height="13" fill="${C.crimson}"/>
+    <text x="556" y="${(y0 + 9.5).toFixed(1)}" font-family="Liberation Sans" font-size="8" font-weight="bold" fill="#FFFFFF" text-anchor="middle">${esc(d.date)}</text>
+    <text x="592" y="${(y0 + 10.5).toFixed(1)}" font-family="Liberation Sans" font-size="10" font-weight="bold" fill="${C.ink}">${esc(d.label)}</text>
   </g>`;
   }).join('\n');
-  return `<rect x="550" y="750" width="454" height="236" fill="${C.crimsonBg}" stroke="${C.crimson}" stroke-width="2.5"/>
-  <rect x="550" y="750" width="454" height="30" fill="${C.crimson}"/>
-  <text x="777" y="770" font-family="Liberation Sans" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">DATE CHECK - EXCLUDED (OCCURRED NOV 19)</text>
+  return `<rect x="516" y="750" width="488" height="228" fill="${C.crimsonBg}" stroke="${C.crimson}" stroke-width="2.5"/>
+  <rect x="516" y="750" width="488" height="28" fill="${C.crimson}"/>
+  <text x="760" y="769" font-family="Liberation Sans" font-size="13.5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">DATE CHECK</text>
+  <text x="528" y="793" font-family="Liberation Sans" font-size="10" font-weight="bold" fill="${C.crimson}">These broke BEFORE Friday, so they are not today's news</text>
   ${items}
-  <line x1="562" y1="956" x2="992" y2="956" stroke="${C.crimson}" stroke-width="1"/>
-  <text x="562" y="974" font-family="Liberation Sans" font-size="9.8" font-weight="bold" fill="${C.crimson}">AUDIT PASSED: ALL 16 STORIES ABOVE OCCURRED ON FRIDAY, 20 NOV 2026</text>`;
+  <line x1="528" y1="964" x2="992" y2="964" stroke="${C.crimson}" stroke-width="1"/>
+  <text x="528" y="974" font-family="Liberation Sans" font-size="9.8" font-weight="bold" fill="${C.crimson}">AUDIT PASSED: ALL 8 STORIES ABOVE HAPPENED ON FRIDAY, 20 NOV 2026</text>`;
 }
 
 // ---------------------------------------------------------------- full page
@@ -446,7 +451,7 @@ function buildSvg() {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
 <rect x="0" y="0" width="1024" height="1024" fill="${C.paper}"/>
 <rect x="10" y="10" width="1004" height="1004" fill="none" stroke="${C.ink}" stroke-width="2"/>
-<text x="20" y="32" font-family="Liberation Sans" font-size="10.5" font-weight="bold" fill="${C.ink}">SINGLE-DAY WORLD EDITION • 16 VERIFIED REPORTS</text>
+<text x="20" y="32" font-family="Liberation Sans" font-size="10.5" font-weight="bold" fill="${C.ink}">SINGLE-DAY WORLD EDITION • 8 VERIFIED REPORTS</text>
 <text x="1004" y="32" font-family="Liberation Sans" font-size="10.5" font-weight="bold" fill="${C.ink}" text-anchor="end">STRICT DATE VERIFIED: NOV 20, 2026 ONLY</text>
 <line x1="20" y1="40" x2="1004" y2="40" stroke="${C.rule}" stroke-width="1"/>
 <text x="512" y="72" font-family="Liberation Serif" font-size="38" font-weight="bold" fill="${C.ink}" text-anchor="middle" letter-spacing="2">THE DAILY WORLD CHRONICLE</text>
@@ -457,10 +462,11 @@ ${heroSvg()}
 ${mapSvg()}
 ${briefsSvg()}
 <line x1="20" y1="742" x2="1004" y2="742" stroke="${C.rule}" stroke-width="1.5"/>
-${cardsSvg()}
+${numbersSvg()}
 ${dateCheckSvg()}
-<line x1="20" y1="994" x2="1004" y2="994" stroke="${C.rule}" stroke-width="1"/>
-<text x="512" y="1007" font-family="Liberation Sans" font-size="9.5" font-weight="bold" fill="${C.ink}" text-anchor="middle">FRIDAY, 20 NOVEMBER 2026 • DETERMINISTIC VECTOR EDITION • 1024×1024</text>
+<line x1="20" y1="984" x2="1004" y2="984" stroke="${C.rule}" stroke-width="1"/>
+<text x="512" y="996" font-family="Liberation Sans" font-size="9" font-weight="bold" fill="${C.ink}" text-anchor="middle">SOURCES: REUTERS, AP, AFP, IMD, UN, XINHUA, ZEROHEDGE, ETUC AND NATIONAL WEATHER SERVICES</text>
+<text x="512" y="1008" font-family="Liberation Sans" font-size="9" fill="${C.ink}" text-anchor="middle">EVERY STORY IN THIS PAPER HAPPENED, OR WAS FIRST REPORTED, ON FRIDAY 20 NOVEMBER 2026; STORIES THAT BROKE EARLIER ARE LISTED IN DATE CHECK, NOT AS TODAY'S NEWS</text>
 </svg>`;
 }
 
